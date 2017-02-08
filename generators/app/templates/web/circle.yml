@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 7
+
+dependencies:
+  override:
+    - yarn
+
+test:
+  override:
+    - yarn test
+    - yarn danger
+
+deployment:
+  demo:
+    branch: master
+    commands:
+      - yarn deploy-storybook
