@@ -11,7 +11,8 @@ echo "Metaphysics Schema is now at $($META_SHA)"
 
 # Save a commit
 cd ../..
-git add .
+git reset
+git add data
 git commit -m "Update Metaphysics schema to $($META_SHA)"
 
 rm -rf externals
