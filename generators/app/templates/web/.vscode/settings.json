@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "tslint.run": "onType",
+    "tslint.autoFixOnSave": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true
+}
