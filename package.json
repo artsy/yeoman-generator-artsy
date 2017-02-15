@@ -1,9 +1,9 @@
 {
   "name": "generator-artsy",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Yeoman generate for Artsy TS + React + Relay apps",
   "main": "generators/app/index.js",
-  "repository": "https://github.com/artsy/yeoman-generator-artsy",
+  "repository": "artsy/yeoman-generator-artsy",
   "author": "Art.sy Inc",
   "keywords": [
     "yeoman-generator"
@@ -13,7 +13,7 @@
     "yosay": "^1.2.1"
   },
   "files": [
-    "app"
+    "generators"
   ],
   "license": "MIT",
   "devDependencies": {}
