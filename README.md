@@ -15,6 +15,7 @@ A Yeoman generate for Artsy TS + React + Relay apps
 Install Yeoman:
 
 ```
+yarn add global generator-artsy
 yarn add global yeoman
 ```
 
