@@ -1,0 +1,4 @@
+<%= name %>
+
+[Your README here]
+
