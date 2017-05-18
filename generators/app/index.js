@@ -56,7 +56,7 @@ module.exports = class extends Generator {
   end() {
     this.log("");
     this.log("OK, setting up git!");
-    
+
     var projectRoot = this.destinationPath(this.name);
     this.spawnCommandSync("git", ["init"], { cwd: projectRoot })
     

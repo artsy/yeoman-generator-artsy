@@ -1,3 +1,5 @@
 ### Master
 
-* Initial setup - <%= user.name %>
+* Initial setup - [@<%= user.github.username %>][]
+
+[@<%= user.github.username %>]: https://github.com/<%= user.github.username %>
