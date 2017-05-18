@@ -20,8 +20,8 @@ A Yeoman generator for:
 Install Yeoman:
 
 ```
-yarn add global generator-artsy
-yarn add global yeoman
+yarn global add yo
+yarn global add generator-artsy
 ```
 
 Then run `yo artsy`.
