@@ -13,7 +13,8 @@
     "typescript": "^2.3.2",
     "lint-staged": "^3.2.5",
     "ts-node": "^3.0.0",
-    "husky": "^0.13.3"
+    "husky": "^0.13.3",
+    "danger": "^0.18.0"
   },
   "scripts": {
     "type-check": "tsc --noEmit",
