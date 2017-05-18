@@ -1,9 +1,11 @@
 # yeoman-generator-artsy
 
-A Yeoman generate for Artsy TS + React + Relay apps
+A Yeoman generator for:
+
+* TypeScript libraries
+* TS + React + Relay apps
 
 <img src="screenshots/yeoman.gif">
-
 
 ## Meta
 
@@ -20,3 +22,7 @@ yarn add global yeoman
 ```
 
 Then run `yo artsy`.
+
+## How do I work on this?
+
+Run `npm link` inside this repo and then it should be used for `yo artsy`.
