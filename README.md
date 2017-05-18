@@ -3,6 +3,9 @@
 A Yeoman generator for:
 
 * TypeScript libraries
+
+<img src="screenshots/cli.gif">
+
 * TS + React + Relay apps
 
 <img src="screenshots/yeoman.gif">
