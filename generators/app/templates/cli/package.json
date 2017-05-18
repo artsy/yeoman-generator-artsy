@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
-  "author": "<%= user.git.name %> <<%= user.git.email %>> & Art.sy Inc",
+  "author": "<%= user.git.name() %> <<%= user.git.email() %>> & Art.sy Inc",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^19.2.3",		

@@ -5,7 +5,7 @@
 ## How do I work on this?
 
 ```sh
-git clone https://github.com/<%= user.github.username %>/<%= name %>.git
+git clone https://github.com/<%= username %>/<%= name %>.git
 cd <%= name %>
 yarn install
 

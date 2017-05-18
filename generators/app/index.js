@@ -33,10 +33,18 @@ module.exports = class extends Generator {
         name: "name",
         message: "Your project name",
         default: this.appname
+      },
+      {
+        type    : 'input',
+        name    : 'username',
+        message : 'Your GitHub username',
+        store   : true
       }
+      
     ]).then(answers => {
       this.name = answers.name.replace(/ /g, "_");
       this.type = answers.type;
+      this.username = answers.username;
     });
   }
 
