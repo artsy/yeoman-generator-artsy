@@ -16,6 +16,7 @@
         "dangerfile.ts"
     ],
     "exclude": [
+        "dangerfile.ts",
         "node_modules",
         "build"
     ]
