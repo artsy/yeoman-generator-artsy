@@ -1,3 +1,3 @@
 export default function hello() {
-    console.log("Hello World")
+    console.log("Hello World") // tslint:disable-line
 }
