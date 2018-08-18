@@ -2,7 +2,7 @@
 
 A Yeoman generator for:
 
-* TypeScript libraries
+* TypeScript CLI tools
 
 <img src="screenshots/cli.gif">
 
