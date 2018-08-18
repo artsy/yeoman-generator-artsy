@@ -14,3 +14,9 @@ yarn install
 # Run tests
 yarn jest
 ```
+
+## How do I deploy this?
+
+```sh
+yarn release
+```

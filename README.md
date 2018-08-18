@@ -17,7 +17,7 @@ This will help you get set up to make a TypeScript CLI for a quick one-off proje
 
 Install Yeoman:
 
-```
+```sh
 yarn global add yo
 yarn global add generator-artsy
 ```
