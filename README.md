@@ -2,17 +2,15 @@
 
 A Yeoman generator for:
 
-* TypeScript CLI tools
+1. Quickly making TypeScript CLI tools
 
 <img src="screenshots/cli.gif">
 
-* TS + React + Relay apps
-
-<img src="screenshots/yeoman.gif">
+This will help you get set up to make a TypeScript CLI for a quick one-off project.
 
 ## Meta
 
-* __State:__ development
+* __State:__ production
 * __Point People:__ [Orta](https://github.com/orta)
 
 ## Usage
