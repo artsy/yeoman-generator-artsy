@@ -1,33 +1,32 @@
+// @ts-check
+
 // For reference, see https://github.com/Microsoft/vscode-generator-code/blob/master/generators/app/index.js
+
+// This file runs untranspiled, so don't use too much fancy syntax.
 
 var Generator = require("yeoman-generator");
 var yosay = require("yosay");
+var path = require("path");
+var fs = require("fs")
 
 module.exports = class extends Generator {
   aStart() {
     this.log(yosay("Welcome to the Artsy Project Generator!"));
   }
+
   aGetType() {
     return this.prompt([
-      {
-        type: "list",
-        name: "type",
-        message: "What type of extension do you want to create?",
-        choices: [
-          {
-            name: "CLI tool",
-            value: "cli"
-          },
-          {
-            name: "Web Project - TS, React, Relay, Storybooks, Jest",
-            value: "web"
-          },
-          {
-            name: "React Native - Not done yet",
-            value: "react-native"
-          }
-        ]
-      },
+      // {
+      //   type: "list",
+      //   name: "type",
+      //   message: "What type of extension do you want to create?",
+      //   choices: [
+      //     {
+      //       name: "CLI tool",
+      //       value: "cli"
+      //     }
+      //   ]
+      // },
       {
         type: "input",
         name: "name",
@@ -35,12 +34,11 @@ module.exports = class extends Generator {
         default: this.appname
       },
       {
-        type    : 'input',
-        name    : 'username',
-        message : 'Your GitHub username',
-        store   : true
+        type: "input",
+        name: "username",
+        message: "Your GitHub username",
+        store: true
       }
-      
     ]).then(answers => {
       this.name = answers.name.replace(/ /g, "_");
       this.type = answers.type;
@@ -53,12 +51,34 @@ module.exports = class extends Generator {
     var date = new Date();
     this.year = date.getFullYear();
 
+    // Because it's only doing CLIs for now
+   this.type = "cli" ;
+    
     // Copy _all_ non-dotfile files, as templated, you can use ejx in them
     var templateRoot = this.templatePath(this.type);
     var projectRoot = this.destinationPath(this.name);
 
-    this.fs.copyTpl(templateRoot, projectRoot, this);
-    this.fs.copy(templateRoot + "/.*", projectRoot)
+    fs.mkdirSync(projectRoot)
+
+    var files = [
+      ".gitignore",
+      ".npmignore",
+      ".travis.yml",
+      "CHANGELOG.md",
+      "dangerfile.ts",
+      "LICENSE",
+      "package.json",
+      "README.md",
+      "tsconfig.json",
+      "tslint.json",
+      "wallaby.js",
+
+      "src/index.ts",
+      "src/_tests/index.test.ts",
+    ];
+    files.forEach(f => {
+      this.fs.copyTpl(path.join(templateRoot, f), path.join(projectRoot, f), this);
+    })
   }
 
   end() {
@@ -66,17 +86,17 @@ module.exports = class extends Generator {
     this.log("OK, setting up git!");
 
     var projectRoot = this.destinationPath(this.name);
-    this.spawnCommandSync("git", ["init"], { cwd: projectRoot })
-    
-    this.log("Running Yarn install")
-    this.spawnCommandSync("yarn", ["install"], { cwd: projectRoot })
+    this.spawnCommandSync("git", ["init"], { cwd: projectRoot });
+
+    this.log("Running Yarn install");
+    this.spawnCommandSync("yarn", ["install"], { cwd: projectRoot });
 
     if (this.type === "cli") {
-        this.log("Running Yarn upgrade")
-        this.spawnCommandSync("yarn", ["upgrade"], { cwd: projectRoot })    
+      this.log("Running Yarn upgrade");
+      this.spawnCommandSync("yarn", ["upgrade"], { cwd: projectRoot });
     }
 
-    this.log("Alright, you're good to go.")
-    this.log("> cd " + projectRoot)
+    this.log("Alright, you're good to go.");
+    this.log("> cd " + projectRoot);
   }
 };
