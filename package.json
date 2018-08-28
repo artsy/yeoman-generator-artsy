@@ -1,7 +1,7 @@
 {
   "name": "generator-artsy",
-  "version": "0.0.3",
-  "description": "A Yeoman generate for Artsy TS + React + Relay apps",
+  "version": "1.0.0",
+  "description": "A Yeoman generate for minimal Artsy TypeScript projects",
   "main": "generators/app/index.js",
   "repository": "artsy/yeoman-generator-artsy",
   "author": "Art.sy Inc",
