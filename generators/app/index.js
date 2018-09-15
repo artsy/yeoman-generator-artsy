@@ -2,7 +2,7 @@
 
 // For reference, see https://github.com/Microsoft/vscode-generator-code/blob/master/generators/app/index.js
 
-// This file runs untranspiled, so don't use too much fancy syntax.
+// This file runs un-transpiled, so don't use too much fancy syntax.
 
 var Generator = require("yeoman-generator");
 var yosay = require("yosay");
@@ -16,17 +16,6 @@ module.exports = class extends Generator {
 
   aGetType() {
     return this.prompt([
-      // {
-      //   type: "list",
-      //   name: "type",
-      //   message: "What type of extension do you want to create?",
-      //   choices: [
-      //     {
-      //       name: "CLI tool",
-      //       value: "cli"
-      //     }
-      //   ]
-      // },
       {
         type: "input",
         name: "name",
@@ -58,8 +47,6 @@ module.exports = class extends Generator {
     var templateRoot = this.templatePath(this.type);
     var projectRoot = this.destinationPath(this.name);
 
-    fs.mkdirSync(projectRoot)
-
     var files = [
       "._gitignore",
       "._npmignore",
@@ -84,7 +71,7 @@ module.exports = class extends Generator {
       {from: "._gitignore", to: ".gitignore"},
       {from: "._npmignore", to: ".npmignore"}
     ]
-    this.fs.move(path.join(projectRoot, ), path.join(projectRoot, ))
+    renames.forEach(r => this.fs.move(path.join(projectRoot, r.from), path.join(projectRoot, r.to)))
   }
 
   end() {
