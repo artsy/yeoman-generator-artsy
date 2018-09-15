@@ -4,5 +4,5 @@ node_modules/
 src/
 dangerfile.ts
 tsconfig.json
-tslint.sjon
+tslint.json
 .gitignore

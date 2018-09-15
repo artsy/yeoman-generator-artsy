@@ -62,7 +62,7 @@ module.exports = class extends Generator {
 
     var files = [
       "._gitignore",
-      ".npmignore",
+      "._npmignore",
       ".travis.yml",
       "CHANGELOG.md",
       "dangerfile.ts",
@@ -79,8 +79,12 @@ module.exports = class extends Generator {
     files.forEach(f => {
       this.fs.copyTpl(path.join(templateRoot, f), path.join(projectRoot, f), this);
     })
-    // Handle the .gitignore specially
-    this.fs.move(path.join(projectRoot, "._gitignore"), path.join(projectRoot, ".gitignore"))
+
+    const renames = [
+      {from: "._gitignore", to: ".gitignore"},
+      {from: "._npmignore", to: ".npmignore"}
+    ]
+    this.fs.move(path.join(projectRoot, ), path.join(projectRoot, ))
   }
 
   end() {
