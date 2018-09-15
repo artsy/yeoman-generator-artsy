@@ -61,7 +61,7 @@ module.exports = class extends Generator {
     fs.mkdirSync(projectRoot)
 
     var files = [
-      ".gitignore",
+      "._gitignore",
       ".npmignore",
       ".travis.yml",
       "CHANGELOG.md",
@@ -79,6 +79,8 @@ module.exports = class extends Generator {
     files.forEach(f => {
       this.fs.copyTpl(path.join(templateRoot, f), path.join(projectRoot, f), this);
     })
+    // Handle the .gitignore specially
+    this.fs.move(path.join(projectRoot, "._gitignore"), path.join(projectRoot, ".gitignore"))
   }
 
   end() {
