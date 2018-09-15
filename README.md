@@ -1,12 +1,8 @@
 # yeoman-generator-artsy
 
-A Yeoman generator for:
+A Yeoman generator for quickly making TypeScript + node projects.
 
-1. Quickly making TypeScript CLI tools
-
-<img src="screenshots/cli.gif">
-
-This will help you get set up to make a TypeScript CLI for a quick one-off project.
+<img src="screenshots/yo-artsy.gif">
 
 ## Meta
 
@@ -26,4 +22,4 @@ Then run `yo artsy`.
 
 ## How do I work on this?
 
-Run `npm link` inside this repo and then it should be used for `yo artsy`.
+Run `npm link` inside this repo and then it will be used for `yo artsy`.
