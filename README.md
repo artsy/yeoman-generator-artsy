@@ -2,7 +2,7 @@
 
 A Yeoman generator for quickly making TypeScript + node projects.
 
-<center><img src="screenshots/yo-artsy.gif"></center>git st
+<center><img src="screenshots/yo-artsy.gif" width=800></center>
 
 ## Meta
 
