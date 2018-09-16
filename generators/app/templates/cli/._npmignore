@@ -6,3 +6,8 @@ dangerfile.ts
 tsconfig.json
 tslint.json
 .gitignore
+wallaby.js
+yarn.lock
+.jest
+.vscode
+
