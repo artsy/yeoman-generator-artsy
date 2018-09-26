@@ -86,7 +86,7 @@ module.exports = class extends Generator {
 
     if (this.type === "cli") {
       this.log("Running Yarn upgrade");
-      this.spawnCommandSync("yarn", ["upgrade"], { cwd: projectRoot });
+      this.spawnCommandSync("yarn", ["upgrade", "--latest"], { cwd: projectRoot });
     }
 
     this.log("Alright, you're good to go.");
