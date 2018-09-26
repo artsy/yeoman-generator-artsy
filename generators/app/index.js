@@ -84,10 +84,12 @@ module.exports = class extends Generator {
     this.log("Running Yarn install");
     this.spawnCommandSync("yarn", ["install"], { cwd: projectRoot });
 
-    if (this.type === "cli") {
-      this.log("Running Yarn upgrade");
-      this.spawnCommandSync("yarn", ["upgrade", "--latest"], { cwd: projectRoot });
-    }
+    this.log("Running Yarn upgrade");
+    this.spawnCommandSync("yarn", ["upgrade", "--latest"], { cwd: projectRoot });
+
+    this.log("Creating an initial commit");
+    this.spawnCommandSync("git", ["add", "."], { cwd: projectRoot });
+    this.spawnCommandSync("git", ["commit", "-m", "Initial commit from yeoman-generator-artsy"], { cwd: projectRoot });
 
     this.log("Alright, you're good to go.");
     this.log("> cd " + projectRoot);
