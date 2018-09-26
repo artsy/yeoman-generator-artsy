@@ -1,6 +1,6 @@
 {
   "name": "generator-artsy",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A Yeoman generate for minimal Artsy TypeScript projects",
   "main": "generators/app/index.js",
   "repository": "artsy/yeoman-generator-artsy",
