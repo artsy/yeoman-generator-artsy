@@ -6,7 +6,7 @@
   "author": "<%= user.git.name() %> <<%= user.git.email() %>> & Art.sy Inc",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^19.2.3",		
+    "@types/jest": "^19.2.3",
     "@types/node": "^10.7.1",
     "danger": "^0.18.0",
     "husky": "^0.13.3",
@@ -23,32 +23,10 @@
     "type-check": "tsc --noEmit",
     "build": "tsc",
     "lint": "tslint 'src/**/*.{ts,tsx}'",
-    "precommit": "lint-staged",
-    "prepush": "npm run build",
     "release": "release-it"
   },
-  "lint-staged": {
-    "*.@(ts|tsx)": [
-      "tslint --fix",
-      "yarn prettier --write",
-      "git add"
-    ]
-  },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(.test)\\.(ts|tsx)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
-    ],
-    "cacheDirectory": ".jest/cache"
+    "preset": "ts-jest"
   },
   "prettier": {
     "printWidth": 115,
@@ -57,6 +35,18 @@
     "trailingComma": "es5",
     "bracketSpacing": true,
     "proseWrap": "always"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn build"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "tslint --fix",
+      "yarn prettier --write",
+      "git add"
+    ]
   }
-
 }
