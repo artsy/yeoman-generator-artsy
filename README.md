@@ -1,6 +1,6 @@
 # yeoman-generator-artsy
 
-A Yeoman generator for quickly making TypeScript + node projects.
+A [Yeoman](http://yeoman.io) [generator](http://yeoman.io/generators/) for quickly making TypeScript + node projects.
 
 <center><img src="screenshots/yo-artsy.gif" width=800></center>
 
