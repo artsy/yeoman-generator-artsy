@@ -9,4 +9,4 @@ cache:
 script:
 - yarn lint
 - yarn jest
-- yarn danger
+- yarn danger ci
