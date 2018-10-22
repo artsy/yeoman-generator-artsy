@@ -30,10 +30,9 @@
     "preset": "ts-jest"
   },
   "prettier": {
-    "printWidth": 115,
     "semi": false,
     "singleQuote": false,
-    "trailingComma": "all",
+    "trailingComma": "es5",
     "bracketSpacing": true,
     "proseWrap": "always"
   },
