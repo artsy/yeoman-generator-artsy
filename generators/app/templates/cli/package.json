@@ -23,7 +23,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "build": "tsc",
-    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "lint": "ts-node node_modules/.bin/tslint 'src/**/*.{ts,tsx}'",
     "release": "release-it"
   },
   "jest": {
